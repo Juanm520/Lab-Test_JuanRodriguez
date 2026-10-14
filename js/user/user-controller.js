@@ -27,6 +27,12 @@ class UserController{
     }
 
     findByEmail(email){
+        // Valida que el email este en un formato adecuado.
+        const regexEmailValido = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+        if(!regexEmailValido.test(email)){
+            return null
+        }
+
         for (let i = 0; i < this.users.length; i++) { 
             if(this.users[i].email === email)
                 return this.users[i];
@@ -34,6 +40,10 @@ class UserController{
     }
 
     findById(id){
+        const regexIdNumerico = /^\d+$/
+        if(!regexIdNumerico.test(id)){
+            return null
+        }
         for (let i = 0; i < this.users.length; i++) { 
             if(this.users[i].id === id)
                 return this.users[i];
