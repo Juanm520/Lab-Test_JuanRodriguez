@@ -16,14 +16,15 @@ test('subtract -5 - -10 to equal 5', () => {
   expect(calculator.subtract(-5, -10)).toBe(5);
 });
 
+//Tarea 1
 //divide() caso 1. Debe ser.
 test('divide 25 / 5 to equal 5', () => {
   expect(calculator.divide(25, 5)).toBe(5);
 });
 
-//divide() caso 2. division por cero.
-test('Cannot divide by zero example> 25 / 0', () => {
-  expect(calculator.divide(25, 0)).toBe('Cannot divide by zero');
+//divide() caso 2. division por uno.
+test('divide by negative returns negative number example> 25 / -5', () => {
+  expect(calculator.divide(25, -5)).toBeLessThan(0);
 });
 
 //multiply() caso 1. Debe ser.
@@ -35,3 +36,11 @@ test('multiply 18 * 2 to equal 36', () => {
 test('multiply -18.4 * 2 not to equal 36', () => {
   expect(calculator.multiply(-18.4, 2)).not.toBe(36)
 })
+
+//Tarea 3>
+test('Cannot divide by zero example> 25 / 0, returns a message', () => {
+  expect(calculator.divide(25, 0)).toBe('Cannot divide by zero');
+});
+
+
+

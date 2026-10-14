@@ -16,6 +16,7 @@ test('add user to userController', () => {
     expect(userController.users).not.toContain(user);
   });
 
+  //Tarea 2>
   // Existe en la lista de usuarios, debe arrojar> null.
   test('user exist in users list, return null', () => {    
       let user = new User(1234,"Santiago", "santiago@generation.org");
@@ -68,4 +69,6 @@ test('An wrong id format returns null', () => {
     expect(userController.findById(userIdInvalido)).toEqual(null);
     expect(userController.findById(user.id)).not.toEqual(null);
   });
+
+
 
